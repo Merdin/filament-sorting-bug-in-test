@@ -19,3 +19,19 @@ it('can sort customers by name', function () {
         ->sortTable('name', 'desc')
         ->assertCanSeeTableRecords($customers->sortByDesc('name'), inOrder: true);
 });
+
+
+it('can sort customers by name 2', function () {
+    $customers = Customer::factory()->createMany([
+        ['name' => 'kand. Emma Groen B'],
+        ['name' => 'Lily Zum Vorde Sive Vording'],
+        ['name' => 'Lily Guler AD'],
+    ]);
+
+    livewire(ListCustomers::class)
+        ->assertCanSeeTableRecords($customers)
+        ->sortTable('name')
+        ->assertCanSeeTableRecords($customers->sortBy('name'), inOrder: true)
+        ->sortTable('name', 'desc')
+        ->assertCanSeeTableRecords($customers->sortByDesc('name'), inOrder: true);
+});

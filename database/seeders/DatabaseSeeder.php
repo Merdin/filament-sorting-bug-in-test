@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Customer;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,7 +14,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        Customer::factory()->createMany([
+            ['name' => 'kand. Emma Groen B'],
+            ['name' => 'Lily Zum Vörde Sive Vörding'],
+            ['name' => 'Lily Güler AD'],
+        ]);
 
         User::factory()->create([
             'name' => 'Test User',

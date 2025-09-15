@@ -14,3 +14,14 @@
 4. Set `postgres` values in `.env`
 5. Run `composer start`
 6. Check the sorting on the customer table
+
+### Login
+Email:
+```
+test@example.com
+```
+
+Password:
+```
+password
+```
